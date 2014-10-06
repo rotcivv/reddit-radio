@@ -3,6 +3,8 @@ import subprocess
 import os
 import sys
 
+#test
+
 #set the subreddit name from the passed argument or set the default
 if 1 < len(sys.argv):
   sub = str(sys.argv[1])
