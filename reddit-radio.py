@@ -23,8 +23,8 @@ before = 'null'
 count = 0
 
 # delete temporary file if it exists
-#if os.path.isfile('temp.radio'):
-#	os.remove('temp.radio')
+if os.path.isfile('temp.radio'):
+	os.remove('temp.radio')
 
 session = requests.Session()
 session.headers.update({"User-Agent": "Reddit Radio/0.1",})
@@ -39,7 +39,7 @@ while 1:
 
 	for i in r.json()['data']['children']:
 		if i['data']['domain'] in domain_white_list:
-			os.system('python youtube-dl -q -f bestaudio -o temp.radio ' + i['data']['url'])
+			os.system('youtube-dl -q -f bestaudio -o temp.radio ' + i['data']['url'])
 			print 'Playing song... ' + i['data']['title']
 			os.system('mpv -really-quiet temp.radio')
 			os.remove('temp.radio')
