@@ -1,4 +1,4 @@
 reddit-radio
 ============
 
-listen to music from any subreddit!
+Listen to music from any subreddit.
